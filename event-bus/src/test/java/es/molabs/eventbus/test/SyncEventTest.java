@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus.test;
+package es.molabs.eventbus.test;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,9 +22,9 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.lmg.eventbus.EventBus;
-import com.lmg.eventbus.test.event.SimpleEvent;
-import com.lmg.eventbus.test.event.SimpleHandler;
+import es.molabs.eventbus.EventBus;
+import es.molabs.eventbus.test.event.SimpleEvent;
+import es.molabs.eventbus.test.event.SimpleHandler;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SyncEventTest 

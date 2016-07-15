@@ -13,12 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus;
+package es.molabs.eventbus.event;
 
-import com.lmg.eventbus.event.Event;
-import com.lmg.eventbus.event.EventHandler;
-
-public interface AsyncEventHandler<E extends Event<H>, H extends EventHandler>
+public class DeadEndEvent extends Event<DeadEndHandler>
 {
-	public void eventFinished(E event);
+	private final Event<?> originalEvent;
+	
+	public DeadEndEvent(Event<?> originalEvent)
+	{
+		this.originalEvent = originalEvent;
+	}
+	
+	public Event<?> getOriginalEvent()
+	{
+		return originalEvent;
+	}
+	
+	public Class<DeadEndHandler> getAssociatedType() 
+	{
+		return DeadEndHandler.class;
+	}
+
+	public void dispatch(DeadEndHandler handler) 
+	{
+		handler.onDeadEvent(this);
+	}	
 }

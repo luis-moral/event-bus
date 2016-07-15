@@ -13,19 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus.test.event;
+package es.molabs.eventbus.event;
 
-import com.lmg.eventbus.event.Event;
-
-public class SimpleEvent extends Event<SimpleHandler> 
+public interface EventHandler
 {
-	public Class<SimpleHandler> getAssociatedType() 
-	{
-		return SimpleHandler.class;
-	}
-
-	public void dispatch(SimpleHandler handler) 
-	{
-		handler.handleSimpleEvent(this);
-	}
 }

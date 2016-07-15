@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus;
+package es.molabs.eventbus;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -27,9 +27,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.lmg.eventbus.event.DeadEndEvent;
-import com.lmg.eventbus.event.Event;
-import com.lmg.eventbus.event.EventHandler;
+import es.molabs.eventbus.event.DeadEndEvent;
+import es.molabs.eventbus.event.Event;
+import es.molabs.eventbus.event.EventHandler;
 
 public class EventBus
 {

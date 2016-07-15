@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus.event;
+package es.molabs.eventbus.event;
 
 public abstract class Event<H extends EventHandler>
 {

@@ -13,29 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus.event;
+package es.molabs.eventbus.event;
 
-public class DeadEndEvent extends Event<DeadEndHandler>
+public interface DeadEndHandler extends EventHandler
 {
-	private final Event<?> originalEvent;
-	
-	public DeadEndEvent(Event<?> originalEvent)
-	{
-		this.originalEvent = originalEvent;
-	}
-	
-	public Event<?> getOriginalEvent()
-	{
-		return originalEvent;
-	}
-	
-	public Class<DeadEndHandler> getAssociatedType() 
-	{
-		return DeadEndHandler.class;
-	}
-
-	public void dispatch(DeadEndHandler handler) 
-	{
-		handler.onDeadEvent(this);
-	}	
+	public void onDeadEvent(DeadEndEvent event);
 }

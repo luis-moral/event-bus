@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.lmg.eventbus.event;
+package es.molabs.eventbus.test.event;
 
-public interface DeadEndHandler extends EventHandler
+import es.molabs.eventbus.event.EventHandler;
+
+public interface SimpleHandler extends EventHandler 
 {
-	public void onDeadEvent(DeadEndEvent event);
+	public void handleSimpleEvent(SimpleEvent event);
 }
