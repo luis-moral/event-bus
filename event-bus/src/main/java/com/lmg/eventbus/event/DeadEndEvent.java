@@ -17,7 +17,7 @@ package com.lmg.eventbus.event;
 
 public class DeadEndEvent extends Event<DeadEndHandler>
 {
-	private Event<?> originalEvent = null;
+	private final Event<?> originalEvent;
 	
 	public DeadEndEvent(Event<?> originalEvent)
 	{

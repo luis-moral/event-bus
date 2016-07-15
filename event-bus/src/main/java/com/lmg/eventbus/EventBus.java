@@ -33,11 +33,11 @@ import com.lmg.eventbus.event.EventHandler;
 
 public class EventBus
 {
-	private Map<Class<Event<? extends EventHandler>>, Set<? extends EventHandler>> eventHandlerMap = null;	
-	private String name = null;
-	private int threads;
-	
-	private ExecutorService executorService = null;
+	private final String name;
+	private final int threads;
+
+	private final ExecutorService executorService;
+	private final Map<Class<Event<? extends EventHandler>>, Set<? extends EventHandler>> eventHandlerMap;
 	
 	public EventBus()
 	{
@@ -49,8 +49,7 @@ public class EventBus
 		this.name = name;
 		this.threads = threads;
 		
-		executorService = Executors.newFixedThreadPool(threads, new EventBusThreadFactory());
-		
+		executorService = Executors.newFixedThreadPool(threads, new EventBusThreadFactory());		
 		eventHandlerMap = new ConcurrentHashMap<Class<Event<? extends EventHandler>>, Set<? extends EventHandler>>();
 	}
 	
@@ -151,7 +150,7 @@ public class EventBus
 	
 	private class EventBusThreadFactory implements ThreadFactory
 	{
-		private AtomicInteger id = null;
+		private final AtomicInteger id;
 		
 		public EventBusThreadFactory()
 		{
@@ -166,9 +165,9 @@ public class EventBus
 	
 	private class AsyncEventRunnable<E extends Event<H>, H extends EventHandler> implements Runnable
 	{
-		private EventBus eventBus = null;
-		private E event = null;
-		private AsyncEventHandler<E, H> handler = null;
+		private final EventBus eventBus;
+		private final E event;
+		private final AsyncEventHandler<E, H> handler;
 		
 		public AsyncEventRunnable(EventBus eventBus, E event, AsyncEventHandler<E, H> handler)
 		{

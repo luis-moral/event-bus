@@ -17,7 +17,7 @@ package com.lmg.eventbus.event;
 
 public abstract class Event<H extends EventHandler>
 {
-	private Object source = null;
+	private final Object source;
 	
 	protected Event()
 	{
