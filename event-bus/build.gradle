@@ -1,0 +1,21 @@
+apply from : '../gradle/java/java.gradle'
+apply from : '../gradle/java/maven.gradle'
+apply from : '../gradle/license/license.gradle'
+apply from : '../gradle/eclipse/java.gradle'
+
+group = 'es.molabs'
+version = '1.0.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Event Bus',
+                   'Implementation-Version': version
+    }
+}
+
+dependencies {
+	testCompile group: 'junit', name: 'junit', version: '[4,)'
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '[2.0,)'
+	testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '[1.1,)'
+	testCompile group: 'ch.qos.logback', name: 'logback-core', version: '[1.1,)'	
+}
