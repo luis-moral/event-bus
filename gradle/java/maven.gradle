@@ -19,10 +19,10 @@ uploadArchives {
       }
 
       pom.project {
-		name 'Jdbc Utils'
+		name 'Event Bus'
         packaging 'jar'
 		description 'Simple event bus'
-        url 'https://github.com/luis-moral/event-bus.'
+        url 'https://github.com/luis-moral/event-bus'
 		
 		scm {
 			url 'https://github.com/luis-moral/event-bus.git'
